@@ -37,7 +37,7 @@ function [ t, tSize ] = tensorMany_private( tSize, a, dimA, varargin )
     end
 
     if any(tSize < 1)
-        error('Not all dimensions of the box (tSize) are supplied, nor can be inferred.');
+        error('Not all dimensions of the tensor (tSize) are supplied, nor can be inferred.');
     end
 
     t = 1;

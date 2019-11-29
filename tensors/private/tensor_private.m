@@ -1,4 +1,4 @@
-function [ b ] = tensor_private( bSize, a, dimA )
+function [ tsr ] = tensor_private( tSize, a, dimA )
 %TENSOR_PRIVATE Creates a tensor of specified size by repeating input value along defined dimension(s).
 %
 %   NOTE: This function is intended only for internal use (it should not be called directly by an external code). For 
@@ -12,19 +12,19 @@ function [ b ] = tensor_private( bSize, a, dimA )
 %
 %   Output arguments:
 %
-%     b     - The resulting tensor.
+%     tsr - The resulting tensor.
 %
 
-    if nargin < 3 || isempty(dimA) || length(dimA) == length(bSize)
-        b = a + zeros(bSize);
+    if nargin < 3 || isempty(dimA) || length(dimA) == length(tSize)
+        tsr = a + zeros(tSize);
         return;
     end
 
     aDims = length(dimA);
-    boxDims = length(bSize);
+    tDims = length(tSize);
 
     % Vector tha defines which dimensions are comming from 'a':
-    fromA = ismember(1:boxDims, dimA);
+    fromA = ismember(1:tDims, dimA);
 
     % Initialize permutation vector:
     pm = zeros(size(fromA));
@@ -33,12 +33,12 @@ function [ b ] = tensor_private( bSize, a, dimA )
     pm(fromA) = 1:aDims;
 
     % Fill the dimensions which aren't comming from 'a' with values in range length(dimA) + 1 to length(bSize):
-    pm(~fromA) = aDims+1:boxDims;
+    pm(~fromA) = aDims+1:tDims;
 
-    b = permute(a, pm);
+    tsr = permute(a, pm);
 
-    bSize(dimA) = 1;
+    tSize(dimA) = 1;
 
-    b = repmat(b, bSize);
+    tsr = repmat(tsr, tSize);
 
 end

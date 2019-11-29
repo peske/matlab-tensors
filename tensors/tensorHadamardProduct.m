@@ -11,7 +11,7 @@ function [ tsr ] = tensorHadamardProduct( tsr, a, dimA, varargin )
 %
 %   Output arguments:
 %
-%    tsr - The resulting box.
+%    tsr - The resulting tensor.
 %
 %   See also: TENSORHADAMARDCOLLAPSED
 %

@@ -14,8 +14,6 @@ function [ isTsr, tSize ] = isTensor( tsr, order )
 %             second-order tensor, a three-dimensional array is a third-order tensor, etc. If this argument isn't 
 %             specified, or if it's empty, it will default to 3.
 %
-%    box    - Value to check.
-%
 %   Output arguments:
 %
 %    isTsr - Logical value that indicates if 'tsr' is a tensor of the specified order.

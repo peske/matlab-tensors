@@ -1,8 +1,8 @@
 function [ r ] = tensorHadamardProduct_alt( tsr, a, dimA )
-%TENSORHADAMARDPRODUCT_ALT The original calculation for which I've created 'boxHadamardProduct' function.
+%TENSORHADAMARDPRODUCT_ALT The original calculation for which I've created 'tensorHadamardProduct' function.
 %
 %   This function should always produce the same output as 'tensorHadamardProduct', but it's much slower. The purpose of 
-%   this function is only to demonstrate scenarios in which 'boxHadamardProduct' can be used.
+%   this function is only to demonstrate scenarios in which 'tensorHadamardProduct' can be used.
 %
 %   Input arguments
 %

@@ -13,6 +13,8 @@ function [ te ] = tensor4Eye( m, n )
 %   Output arguments:
 %
 %    te -      The resulting eye tensor4 (identity tensor4).
+%
+%   See also: TENSOR3EYE
 
     if nargin < 1 || isempty(m)
         error('The first argument (''m'') is mandatory.');
