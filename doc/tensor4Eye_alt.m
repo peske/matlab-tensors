@@ -1,5 +1,5 @@
 function [ te ] = tensor4Eye_alt( m, n )
-%BOX4EYE_ALT Alternative to 'tensor4Eye1 function.
+%TENSOR4EYE_ALT Alternative to 'tensor4Eye' function.
 
     te = zeros([m,n,m,n]);
 
