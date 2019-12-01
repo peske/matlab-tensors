@@ -12,26 +12,20 @@ function [ tSize, a, dimA ] = checkDimsForTensor_private( tSize, a, dimA )
 %
 %    dimA  - The same as the input, but sorted in ascending order.
 
-    if nargin < 2
-        error('The first two arguments (''bSize'' and ''a'') are mandatory.');
-    end
-
-    if isempty(a)
-        error('The second argument (''a'') cannot be empty.');
+    if nargin < 2 || isempty(tSize) || isempty(a)
+        error('The first two arguments are mandatory.');
     end
 
     if ~isrow(tSize) || ~all(isWholeNumber(tSize)) || any(tSize < 0)
-        error('The first argument (''bSize'') has to be a row vector which contains only non-negative integers.');
+        error('The first argument (''tSize'') has to be a row vector which contains only non-negative integers.');
     end
-
-    aDims = tensorOrder(a);
 
     if nargin < 3 || isempty(dimA)
 
-        if aDims < 1
+        if isscalar(a)
             dimA = [];
         else
-            dimA = 1:aDims;
+            dimA = 1:tensorOrder(a);
         end
 
     else
@@ -40,16 +34,17 @@ function [ tSize, a, dimA ] = checkDimsForTensor_private( tSize, a, dimA )
             error('The third argument (''dimA'') must be a scalar or a vector.');
         end
 
-        if ~all(isWholeNumber(dimA)) || any(dimA < 1)
-            error('The third argument (''dimA'') can contain only whole positive numbers.');
+        if ~all(isWholeNumber(dimA)) || any(dimA < 1) || length(dimA) ~= length(unique(dimA))
+            error('The third argument (''dimA'') must contain unique positive integers.');
         end
 
-        if length(dimA) ~= length(unique(dimA))
-            error('The third argument (''dimA'') cannot contain duplicated elements.');
-        end
-
-        if length(dimA) < aDims
-            error('The third argument (''dimA'') has to have more elements to define all dimensions of the second argument (''a'').');
+        if length(dimA) < tensorOrder(a)
+            
+            aDims = tensorOrder(a);
+            
+            error('The third argument (''dimA'') must have at least %d arguments becase the second argument (''a'') is of order %d.', ...
+                aDims, aDims);
+            
         end
 
         % Ensure row vector

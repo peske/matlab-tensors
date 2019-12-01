@@ -1,9 +1,6 @@
 function [ t, tSize ] = tensorMany_private( tSize, a, dimA, varargin )
 %TENSORMANY_PRIVATE Combines multiple 'a' and 'dimA' pairs into a single tensor.
 %
-%   NOTE: This function is intended only for internal use (it should not be called directly by an external code). For 
-%         this reason input argument validation isn't implemented.
-%
 %   Every 'a' and 'dimA' pair is processed by using 'checkDimsForTensor_private' and 'tensor_private' functions. Results 
 %   are then combined by element-wise multiplication of tensors gotten by each pair.
 %
