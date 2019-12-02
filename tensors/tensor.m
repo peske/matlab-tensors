@@ -55,7 +55,7 @@ function [ t, tSize ] = tensor( tSize, a, dimA, varargin )
     end
 
     if ~isvector(tSize) || ~all(isWholeNumber(tSize)) || any(tSize < 0)
-        error('The first argument (''tSize'') has to be a scalar or a vector which contains only a non-negative integers.');
+        error('The first argument (''tSize'') has to be a scalar or a vector which contains only a non-negative whole numbers.');
     end
 
     if isscalar(tSize)

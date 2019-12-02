@@ -9,7 +9,7 @@ function [ isTsr, tSize ] = isTensor( tsr, order )
 %
 %    tsr    - Value to check.
 %
-%    order  - The order of the tensor. It has to be a scalar, positive integer value which represents number of 
+%    order  - The order of the tensor. It has to be a scalar, positive whole number which represents number of 
 %             dimensions. For example, a scalar is a zero-order tensor, a vector is a first-order tensor, a matrix is a 
 %             second-order tensor, a three-dimensional array is a third-order tensor, etc. If this argument isn't 
 %             specified, or if it's empty, it will default to 3.
@@ -21,7 +21,7 @@ function [ isTsr, tSize ] = isTensor( tsr, order )
 %    tSize - Optional. The size of the tensor. This will be a row vector of length at least equal to 'order'. It means 
 %            that, for example, if 'tsr' is a vector of size [4, 1], and 'order' is 4, the resulting 'tSize' will be 
 %            [4, 1, 1, 1]. But there are also two cases when it may happen that 'tSize' has length greater than 'order':
-%             - if 'tsr' has more dimensions than specified by 'order', in which case 'answer' will be false;
+%             - if 'tsr' has more dimensions than specified by 'order', in which case 'isTsr' will be false;
 %             - If 'order' is less than 2. Minimal length of 'tSize' is 2, as with MATLAB's <a 
 %                href="matlab:web('https://www.mathworks.com/help/matlab/ref/size.html')">size</a> function.
 %
@@ -33,11 +33,7 @@ function [ isTsr, tSize ] = isTensor( tsr, order )
     if nargin < 2 || isempty(order)
         order = 3;
     elseif ~isscalar(order) || ~isWholeNumber(order) || order < 1
-        error('The second argument (''order'') has to be a scalar, positive integer value.');
-    end
-
-    if nargin < 1
-        error('The first argument (''tsr'') is mandatory.');
+        error('The second argument (''order'') has to be a scalar, positive whole number.');
     end
 
     if isempty(tsr)

@@ -15,7 +15,7 @@ function [ t3, tSize ] = tensor3( tSize, a, dimA, varargin )
     if nargin < 3
         dimA = [];
     elseif ~all(isWholeNumber(dimA), 'all') || any(dimA > 3 | dimA < 1, 'all')
-        error('The third argument (''dimA'') can contain only positive integers in range 1 to 3.');
+        error('The third argument (''dimA'') can contain only positive whole numbers in range 1 to 3.');
     end
 
     if nargin < 2
@@ -33,7 +33,7 @@ function [ t3, tSize ] = tensor3( tSize, a, dimA, varargin )
     for i = 5:2:nargin
         dimAParam = varargin{i - 3};
         if ~all(isWholeNumber(dimAParam), 'all') || any(dimAParam > 3 | dimAParam < 1, 'all')
-            error('Argument at position %d, which represents ''dimA'',  can contain only positive integers in range 1 to 3.',...
+            error('Argument at position %d, which represents ''dimA'',  can contain only positive whole numbers in range 1 to 3.',...
                 i);
         end
     end

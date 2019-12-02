@@ -17,7 +17,7 @@ function [ tSize, a, dimA ] = checkDimsForTensor_private( tSize, a, dimA )
     end
 
     if ~isrow(tSize) || ~all(isWholeNumber(tSize)) || any(tSize < 0)
-        error('The first argument (''tSize'') has to be a row vector which contains only non-negative integers.');
+        error('The first argument (''tSize'') has to be a row vector which contains only non-negative whole numbers.');
     end
 
     if nargin < 3 || isempty(dimA)
@@ -35,7 +35,7 @@ function [ tSize, a, dimA ] = checkDimsForTensor_private( tSize, a, dimA )
         end
 
         if ~all(isWholeNumber(dimA)) || any(dimA < 1) || length(dimA) ~= length(unique(dimA))
-            error('The third argument (''dimA'') must contain unique positive integers.');
+            error('The third argument (''dimA'') must contain unique positive whole numbers.');
         end
 
         if length(dimA) < tensorOrder(a)
@@ -48,7 +48,7 @@ function [ tSize, a, dimA ] = checkDimsForTensor_private( tSize, a, dimA )
         end
 
         % Ensure row vector
-        if size(dimA, 1) > 1
+        if ~isrow(dimA)
             dimA = dimA.';
         end
 

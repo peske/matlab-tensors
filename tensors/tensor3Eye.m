@@ -15,7 +15,7 @@ function [ c ] = tensor3Eye( n )
 %   See also: TENSOR4EYE
 
     if ~isscalar(n) || n < 0 || isWholeNumber(n)
-        error('%s must be integer non-negative scalar.', altIfEmpty(inputname(1), 'n'));
+        error('%s must be a scalar, non-negative whole number.', altIfEmpty(inputname(1), 'n'));
     end
 
     if n < 1

@@ -23,7 +23,7 @@ function [ r ] = tensorHadamardProduct_alt( tsr, a, dimA )
         end
 
     elseif ~isrow(dimA) || ~all(isWholeNumber(dimA)) || any(dimA < 1) || length(dimA) ~= length(unique(dimA))
-        error('The third argument (''dimA'') has to be a row vector, containing only unique positive integer values.');
+        error('The third argument (''dimA'') has to be a row vector, containing only unique positive whole numbers.');
     elseif length(dimA) < tensorOrder(a)
         
         order = tensorOrder(a);
