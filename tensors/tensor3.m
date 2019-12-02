@@ -14,8 +14,9 @@ function [ t3, tSize ] = tensor3( tSize, a, dimA, varargin )
 
     if nargin < 3
         dimA = [];
-    elseif ~all(isWholeNumber(dimA), 'all') || any(dimA > 3 | dimA < 1, 'all')
-        error('The third argument (''dimA'') can contain only positive whole numbers in range 1 to 3.');
+    elseif ~isempty(dimA) && ~isvector(dimA) || ~all(isWholeNumber(dimA), 'all') || any(dimA > 3 | dimA < 1, 'all') ...
+            || length(dimA) ~= length(unique(dimA))
+        error('The third argument (''dimA'') must be a vector which contains unique positive whole numbers in range 1 to 3.');
     end
 
     if nargin < 2

@@ -14,8 +14,9 @@ function [ t4, tSize ] = tensor4( tSize, a, dimA, varargin )
 
     if nargin < 3
         dimA = [];
-    elseif ~all(isWholeNumber(dimA), 'all') || any(dimA > 4 | dimA < 1, 'all')
-        error('The third argument (''dimA'') can contain only positive whole numbers in range 1 to 4.');
+    elseif ~isempty(dimA) && ~isvector(dimA) || ~all(isWholeNumber(dimA), 'all') || any(dimA > 4 | dimA < 1, 'all') ...
+            || length(dimA) ~= length(unique(dimA))
+        error('The third argument (''dimA'') must be a vector which contains unique positive whole numbers in range 1 to 4.');
     end
 
     if nargin < 2
