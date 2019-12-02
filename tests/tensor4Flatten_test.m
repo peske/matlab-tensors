@@ -17,7 +17,7 @@ function [] = checkTensor4Flatten( m, n, p, q )
         for j = 1:n
             for k = 1:p
                 for l = 1:q
-                    assert(all(t(i, j, k, l) == tf((j - 1) * m + i, (l - 1) * p + k), 'all'));
+                    assert(t(i, j, k, l) == tf((j - 1) * m + i, (l - 1) * p + k));
                 end
             end
         end
