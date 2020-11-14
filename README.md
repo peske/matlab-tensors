@@ -15,41 +15,6 @@ Test
 
 ![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2+4ac}}{2a})
 
-<math display="block">
-<mrow>
-  <mi>x</mi>
-  <mo>=</mo>
-  <mfrac>
-    <mrow>
-      <mrow>
-        <mo>-</mo>
-        <mi>b</mi>
-      </mrow>
-      <mo>&#xB1;<!--PLUS-MINUS SIGN--></mo>
-      <msqrt>
-        <mrow>
-          <msup>
-            <mi>b</mi>
-            <mn>2</mn>
-          </msup>
-          <mo>-</mo>
-          <mrow>
-            <mn>4</mn>
-            <mo>&#x2062;<!--INVISIBLE TIMES--></mo>
-            <mi>a</mi>
-            <mo>&#x2062;<!--INVISIBLE TIMES--></mo>
-            <mi>c</mi>
-          </mrow>
-        </mrow>
-      </msqrt>
-    </mrow>
-    <mrow>
-      <mn>2</mn>
-      <mo>&#x2062;<!--INVISIBLE TIMES--></mo>
-      <mi>a</mi>
-    </mrow>
-  </mfrac>
-</mrow>
-</math>
+![$\frac{{\partial }^2v_G}{{\left(\partial m\right)}^2}\ [n*n*n]\to \frac{{\partial }^2v_{Gi}}{\partial m_j\partial m_k}=\frac{{\overline{r}}_i}{{\mu }^2_{Fi}}\frac{\partial {\mu }_{Fi}}{\partial m_j}\frac{\partial {\mu }_{Fi}}{\partial m_k}\left(-\frac{v_j}{{\overline{r}}_j}+\frac{2}{R^2_G}\frac{x_i}{{\mu }_{Fi}}-\frac{v_k}{{\overline{r}}_k}\right)$](https://latex.codecogs.com/svg.latex?$\frac{{\partial&space;}^2v_G}{{\left(\partial&space;m\right)}^2}\&space;[n*n*n]\to&space;\frac{{\partial&space;}^2v_{Gi}}{\partial&space;m_j\partial&space;m_k}=\frac{{\overline{r}}_i}{{\mu&space;}^2_{Fi}}\frac{\partial&space;{\mu&space;}_{Fi}}{\partial&space;m_j}\frac{\partial&space;{\mu&space;}_{Fi}}{\partial&space;m_k}\left(-\frac{v_j}{{\overline{r}}_j}+\frac{2}{R^2_G}\frac{x_i}{{\mu&space;}_{Fi}}-\frac{v_k}{{\overline{r}}_k}\right)$)
 
 Test
