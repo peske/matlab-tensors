@@ -10,6 +10,7 @@ function T = example1Loops(a, b, c)
     % Initialize the result:
     T = zeros(n, m, p);
     
+    % Calculate:
     for i = 1:n
         for j = 1:m
             for k = 1:p
