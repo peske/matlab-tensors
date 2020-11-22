@@ -9,12 +9,13 @@ Instead, I will create only few things that I've needed for my projects.
 
 # Motivation / The Problem
 
+Here I'll give an example problem solved by this library. Let's say that we have three arrays (vectors) with _n_, _m_ 
+and _p_ elements, respectivelly: ![a_{\[n\]}](https://latex.codecogs.com/svg.latex?a_{[n]}),
+![b_{\[m\]}](https://latex.codecogs.com/svg.latex?b_{[m]}) and 
+![c_{\[p\]}](https://latex.codecogs.com/svg.latex?c_{[p]}). Let's also say that, for some reason, we need to 
+calculate a three-dimensional array (tensor) ![T_{\[n*m*k\]}](https://latex.codecogs.com/svg.latex?T_{[n*m*k]}), 
+defined as:
 
+![T_{\[m*n*k\]} \to t_{i,j,k}=a_i*b_j*c_k](https://latex.codecogs.com/svg.latex?\Large%20T_{\[m*n*k\]}%20\to%20t_{i,j,k}=a_i*b_j*c_k)
 
-Test
-
-![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2+4ac}}{2a})
-
-![peske](https://latex.codecogs.com/svg.latex?\Large&space;\frac{{\partial&space;}^2v_G}{{\left(\partial&space;m\right)}^2}\&space;[n*n*n]\to&space;\frac{{\partial&space;}^2v_{Gi}}{\partial&space;m_j\partial&space;m_k}=\frac{{\overline{r}}_i}{{\mu&space;}^2_{Fi}}\frac{\partial&space;{\mu&space;}_{Fi}}{\partial&space;m_j}\frac{\partial&space;{\mu&space;}_{Fi}}{\partial&space;m_k}\left(-\frac{v_j}{{\overline{r}}_j}+\frac{2}{R^2_G}\frac{x_i}{{\mu&space;}_{Fi}}-\frac{v_k}{{\overline{r}}_k}\right))
-
-Test
+where ![i=\overline{1,n}, j=\overline{1,m}, k=\overline{1,p}](https://latex.codecogs.com/svg.latex?i=\overline{1,n},%20j=\overline{1,m},%20k=\overline{1,p})
