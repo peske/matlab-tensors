@@ -16,4 +16,4 @@ and _p_ elements, respectivelly: ![a_{\[n\]}](https://latex.codecogs.com/svg.lat
 calculate a three-dimensional array (tensor) ![T_{\[n*m*k\]}](https://latex.codecogs.com/svg.latex?T_{[n*m*k]}), 
 defined as:
 
-![T_{\[m*n*k\]} \to t_{i,j,k}=a_i*b_j*c_k\rm{ where }i=\overline{1,n}, j=\overline{1,m}, k=\overline{1,p}](https://latex.codecogs.com/svg.latex?\Large%20T_{\[m*n*k\]}%20\to%20t_{i,j,k}=a_i*b_j*c_k\rm{%20where%20}i=\overline{1,n},%20j=\overline{1,m},%20k=\overline{1,p})
+![T_{\[m*n*k\]} \to t_{i,j,k}=a_i*b_j*c_k\ where\ i=\overline{1,n}, j=\overline{1,m}, k=\overline{1,p}](https://latex.codecogs.com/svg.latex?\Large{T_{\[m*n*k\]}%20\to%20t_{i,j,k}=a_i*b_j*c_k%5c%20where%5c%20i=\overline{1,n},j=\overline{1,m},k=\overline{1,p}})
