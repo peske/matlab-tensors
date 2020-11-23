@@ -1,5 +1,5 @@
-function tests = tensorHadamardProduct_test()
-%TENSORHADAMARDPRODUCT_TEST 'tensorHadamardProduct' unit testing.
+function tests = tensorHadamard_alt_test()
+%TENSORHADAMARD_ALT_TEST 'tensorHadamard' unit testing.
     tests = functiontests(localfunctions);
 end
 
@@ -13,10 +13,10 @@ function [] = checkTensorHadamardProduct(tSize, dimA)
 
     mx = rand(tSize(dimA));
 
-    solution1 = tensorHadamardProduct(t, mx, dimA);
+    solution1 = t .* tensorHadamard(size(t), mx, dimA);
 
     solution2 = tensorHadamardProduct_alt(t, mx, dimA);
     
-    assert(all(abs(solution1 - solution2) < 1e-8, 'all'));
+    assert(all(abs(solution1 - solution2) < 1e-6, 'all'));
 
 end
