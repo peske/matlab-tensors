@@ -1,4 +1,4 @@
-function [wholeNumber] = isWholeNumber(number)
+function wholeNumber = isWholeNumber(number)
 %ISWHOLENUMBER Returns true if the input argument is a whole number.
 %   Checks if 'number' is a whole number. The difference comparing to <a 
 %   href="matlab:web('https://www.mathworks.com/help/matlab/ref/isinteger.html')">isinteger</a> function is that the 
@@ -6,6 +6,11 @@ function [wholeNumber] = isWholeNumber(number)
 %   a whole number. In other words, isinteger(5) will return false (because 5 is a floating point number), while 
 %   isWholeNumber(5) will return true.
 
+    if nargin < 1 || isempty(number)
+        error('The input argument is mandatory and cannot be empty.');
+    end
+
     wholeNumber = isfinite(number) & number == floor(number);
 
 end
+

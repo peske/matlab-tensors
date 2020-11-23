@@ -27,13 +27,13 @@ function [ isTsr, tSize ] = isTensor( tsr, order )
 %
 
     if nargin < 1
-        error('The first argument (''tsr'') is mandatory.');
+        error('The first argument is mandatory.');
     end
 
     if nargin < 2 || isempty(order)
         order = 3;
     elseif ~isscalar(order) || ~isWholeNumber(order) || order < 1
-        error('The second argument (''order'') has to be a scalar, positive whole number.');
+        error('The second argument must be a scalar, positive whole number.');
     end
 
     if isempty(tsr)
@@ -55,3 +55,4 @@ function [ isTsr, tSize ] = isTensor( tsr, order )
     end
 
 end
+

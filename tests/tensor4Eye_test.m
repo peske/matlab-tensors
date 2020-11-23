@@ -49,3 +49,4 @@ function checkTensor4EyeValues( m, n )
     end
 
 end
+

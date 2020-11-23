@@ -11,7 +11,7 @@ function [ r ] = tensorHadamardProduct_alt( tsr, a, dimA )
 %    a, dimA - The same meaning as in 'tensor' function.
 
     if nargin < 2 || isempty(tsr) || isempty(a)
-        error('The first two arguments are required.');
+        error('The first two arguments are required and cannot be empty.');
     end
 
     if nargin < 3 || isempty(dimA)
@@ -23,12 +23,12 @@ function [ r ] = tensorHadamardProduct_alt( tsr, a, dimA )
         end
 
     elseif ~isrow(dimA) || ~all(isWholeNumber(dimA)) || any(dimA < 1) || length(dimA) ~= length(unique(dimA))
-        error('The third argument (''dimA'') has to be a row vector, containing only unique positive whole numbers.');
+        error('The third argument has to be a row vector, containing only unique positive whole numbers.');
     elseif length(dimA) < tensorOrder(a)
         
         order = tensorOrder(a);
         
-        error('The third argument (''dimA'') must have at least %d arguments becase the second argument (''a'') is of order %d.', ...
+        error('The third argument must have at least %d arguments becase the second argument is of order %d.', ...
             order, order);
         
     elseif ~issorted(dimA, 'ascend')

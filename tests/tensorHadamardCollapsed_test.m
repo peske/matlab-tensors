@@ -57,7 +57,7 @@ end
 
 function [] = checkTensorHadamardCollapsed_Vector( i, j )
 
-    t = tensor(3, rand([1, i]), [1, 2], rand([1, j]), [1, 3]);
+    t = tensorHadamard(3, rand([1, i]), [1, 2], rand([1, j]), [1, 3]);
 
     A(:,:) = t(1,:,:);
 
