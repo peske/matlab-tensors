@@ -12,10 +12,10 @@ function checkValues(n)
 
     R = rand();
     D = rand(n, n);
-    r = rand(n);
-    m = rand(n);
-    v = rand(n);
-    x = rand(n);
+    r = rand(n, 1);
+    m = rand(n, 1);
+    v = rand(n, 1);
+    x = rand(n, 1);
 
     % Pre-calculate v ./ r because it appears twice:
     vr = v ./ r;
@@ -29,8 +29,12 @@ function checkValues(n)
     for i = 1:n
         for j = 1:n
             for k = 1:n
-                assert(abs(T(i, j, k) - r(i)/m(i)^2 * D(i, j) * D(i, k) * (- v(j)/r(j) + 2/R^2 * x(i)/m(i) - v(k)/r(k))) < 1e-6, ...
-                    'Result mismatch.');
+                act = r(i)/m(i)^2 * D(i, j) * D(i, k) * (- v(j)/r(j) + 2/R^2 * x(i)/m(i) - v(k)/r(k));
+                err = abs(T(i, j, k) - act);
+                if err >= 1e-6
+                    disp('Actual: %d; from function: %d', act, T(i, j, k));
+                end
+                assert(err < 1e-6, 'Result mismatch.');
             end
         end
     end
