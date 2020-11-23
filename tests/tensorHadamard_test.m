@@ -1,14 +1,13 @@
-function tests = tensorHadamard_1_test()
-%TENSORHADAMARD_1_TEST Unit test of 'tensorHadamard' against equation 1.
-%   The test is based on equation 1 from tensorHadamard_tests.md file.
+function tests = tensorHadamard_test()
+%TENSORHADAMARD_TEST Unit test of 'tensorHadamard' function.
     tests = functiontests(localfunctions);
 end
 
-function values_test(~)
-    checkValues(4, 5, 6);
+function equation1_test(~)
+    equation1(4, 5, 6);
 end
 
-function checkValues(n, m, p)
+function equation1(n, m, p)
 
     a = rand([n, 1]);
     b = rand([m, 1]);
