@@ -1,8 +1,8 @@
-function [ c ] = tensor3Eye( n )
-%TENSOR3EYE Creates an eye tensor (identity tensor) of specified size.
+function c = tensor3Eye( n )
+%TENSOR3EYE Creates an eye (identity) third order tensor of specified size.
 %   
-%   The resulting identity tensor3 is such that its all elements are 0, expect for the elements on the main diagonal of 
-%   the cube (where indexes in all three dimensions are equal, i.e. [1,1,1], [2,2,2], etc.).
+%   The resulting identity third order tensor is such that its all elements are 0, expect for the elements on the main 
+%   diagonal of the cube (where indexes in all three dimensions are equal, i.e. [1,1,1], [2,2,2], etc.).
 %
 %   Input arguments:
 %
@@ -10,12 +10,16 @@ function [ c ] = tensor3Eye( n )
 %
 %   Output arguments:
 %
-%   c - The resulting eye tensor (identity tensor).
+%   c - The resulting eye (identity) tensor.
 %
 %   See also: TENSOR4EYE
 
-    if ~isscalar(n) || n < 0 || isWholeNumber(n)
-        error('%s must be a scalar, non-negative whole number.', altIfEmpty(inputname(1), 'n'));
+    if nargin < 1 || isempty(m)
+        error('The first argument is mandatory and cannot be empty.');
+    end
+
+    if ~isscalar(n) || n < 0 || ~isWholeNumber(n)
+        error('The input argument must be a scalar, non-negative, whole number.');
     end
 
     if n < 1
@@ -30,3 +34,4 @@ function [ c ] = tensor3Eye( n )
     end
 
 end
+

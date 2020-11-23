@@ -1,24 +1,24 @@
-function [ r ] = tensorHadamardCollapsed( tsr, a, dimA )
+function r = tensorHadamardCollapsed( tsr, a, dimA )
 %TENSORHADAMARDCOLLAPSED Performs element-wise multiplication (Hadamard product) of tensors, but then collapses the result by summing over 'dimA' dimensions.
 %
-%   The function actually executes 'tensorHadamardProduct' function internally, but collapses the result by summing it 
-%   along 'dimA' dimensions. Its purpose is explained in 'tensorHadamardCollapsed_alt' function.
+%   The function actually executes 'tensorProduct' function internally, but collapses the result by summing it along 
+%   'dimA' dimensions. Its purpose is explained in 'tensorHadamardCollapsed_alt' function.
 %
 %   Input arguments:
 %
 %    tensor  - The tensor to multiply.
 %
-%    a, dimA - Have the same meaning as in 'tensor', except that here we are accepting only one 'a'/'dimA' pair.
+%    a, dimA - Have the same meaning as in 'tensorHadamard', except that here we are accepting only one 'a'/'dimA' pair.
 %
 %   Output arguments:
 %
-%    r -       The result.
+%    r       - The result.
 %
-%   See also: TENSORHADAMARDPRODUCT
+%   See also: TENSORHADAMARD
 %
 
     if nargin < 2 || isempty(tsr) || isempty(a)
-        error('The first two arguments are required.');
+        error('The first two arguments are required and cannot be empty.');
     end
 
     if nargin < 3 || isempty(dimA)
@@ -29,7 +29,7 @@ function [ r ] = tensorHadamardCollapsed( tsr, a, dimA )
         end   
     end
 
-    tsr = tensorHadamardProduct(tsr, a, dimA);
+    tsr = tensorHadamard(tsr, a, dimA);
 
     if isempty(dimA)
         r = tsr;
@@ -52,3 +52,4 @@ function [ r ] = tensorHadamardCollapsed( tsr, a, dimA )
     r = permute(tsr, [setdiff(1:order, dimA), dimA]);
 
 end
+
