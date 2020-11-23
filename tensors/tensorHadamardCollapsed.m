@@ -29,7 +29,7 @@ function r = tensorHadamardCollapsed( tsr, a, dimA )
         end   
     end
 
-    tsr = tensorHadamard(tsr, a, dimA);
+    tsr = tsr .* tensorHadamard(size(tsr), a, dimA);
 
     if isempty(dimA)
         r = tsr;
