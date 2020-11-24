@@ -66,16 +66,16 @@ end
 function equation3(n, m, p)
 
     A = rand([n, m]);
-    c = rand([p, 1]);
+    b = rand([p, 1]);
 
-    T = tensorHadamard(3, A, [], c, 3);
+    T = tensorHadamard(3, A, [], b, 3);
 
     assert(all(size(T) == [n, m, p], 'all'), 'Unexpected dimensions.');
 
     for i = 1:n
         for j = 1:m
             for k = 1:p
-                assert(abs(T(i, j, k) - A(i, j) * c(k)) < 1e-6, 'Result mismatch.');
+                assert(abs(T(i, j, k) - A(i, j) * b(k)) < 1e-6, 'Result mismatch.');
             end
         end
     end
