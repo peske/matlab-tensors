@@ -48,7 +48,6 @@ function [ t, tSize ] = tensorHadamard( tSize, a, dimA, varargin )
 %    t       - The resulting tensor.
 %    tSize   - The size of the resulting tensor.
 %
-%   See also: TENSOR3, TENSOR4
 
     if nargin < 2 || isempty(tSize) || isempty(a)
         error('The first two arguments are mandatory and cannot be empty.');
