@@ -1,15 +1,21 @@
-function r = sumAndCollapse(t,dim)
+function r = sumAndCollapse( t, dim )
 %SUMANDCOLLAPSE Sums input tensor along the specified dimensions and collapses it.
 %
-% Thiis function is very similar to <a href="matlab:web('https://www.mathworks.com/help/matlab/ref/sum.html')">sum</a> 
-% function in terms that both are summing over the specified dimensions, and tensors retruned by both of them will 
-% contain the same elements. The only difference is in the shapre of retruned tensor. Please take a look at the example 
-% below to understand the difference.
+%   Thiis function is very similar to 
+%   <a href="matlab:web('https://www.mathworks.com/help/matlab/ref/sum.html')">sum</a> 
+%   in terms that both are summing over the specified dimensions, and 
+%   tensors retruned by both of them will contain the same elements. The 
+%   only difference is in the shapre of the retruned tensor. The difference 
+%   is explained in the example below.
 %
 % Input arguments:
 %
 %  t   - Tensor to collapse.
 %  dim - Dimensions over which to sum and collapse.
+%
+% Output arguments:
+%
+%  r - The result.
 %
 % Example:
 %
