@@ -1,15 +1,13 @@
 function dims = tensorOrder( tsr )
-%TENSORORDER Returns the order (number of dimensions) of the input tensor.
+% Get the order (number of dimensions) of the input tensor.
 %
-% Input arguments:
+% Args:
+%   tsr: Input tensor whose order we want to determine.
 %
-%  tsr - Input tensor whose order we want to determine.
-%
-% Output arguments:
-%
-%  dims - The order (number of dimensions) of the input tensor. If the
-%         input value is a scalar, the function will return `0`; if it's a 
-%         vector, the function will return 1, etc.
+% Returns:
+%   dims: The order (number of dimensions) of the input tensor. If the
+%       input value is a scalar, the function will return ``0``; if it's a 
+%       vector, the function will return ``1``, etc.
 %
 
     if nargin < 1 || isempty(tsr)

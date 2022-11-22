@@ -1,21 +1,21 @@
 function te = tensor4Eye( m, n )
-%TENSOR4EYE Returns eye (identity) fourth order tensor with dimensions `[m,n,m,n]`.
+% Create *eye* (*identity*) fourth order tensor with dimensions ``[m,n,m,n]``.
 %
-%   The resulting "identity" tensor is such that its flattened version 
-%   (`tensor4Flatten`) is equal to `eye(m * n)`.
+% The resulting *identity* tensor is such that its flattened version 
+% (:func:`tensor4Flatten`) is equal to ``eye(m * n)``.
 %
-%   Input arguments:
+% Args:
+%   m: 1st and 3rd dimension of the resulting tensor. It has to be a
+%       scalar, positive whole number.
+%   n: Optional. 2nd and 4th dimension of the resulting tensor. If not 
+%       specified or empty, it will default ``m``.
 %
-%    m  - 1st and 3rd dimension of the resulting tensor. It has to be a 
-%         scalar, positive whole number.
-%    n  - Optional. 2nd and 4th dimension of the resulting tensor. If not 
-%         specified or empty, it will default `m`.
+% Returns:
+%   te: The resulting *eye* tensor (*identity* tensor).
 %
-%   Output arguments:
+% See Also:
+%   :func:`tensor3Eye`
 %
-%    te - The resulting "eye" tensor ("identity" tensor).
-%
-%   See also: TENSOR3EYE
 
     if nargin < 1 || isempty(m)
         error('The first argument is mandatory and cannot be empty.');

@@ -1,20 +1,21 @@
 function c = tensor3Eye( n )
-%TENSOR3EYE Creates an "eye" ("identity") third order tensor of specified size.
+% Create an *eye* (*identity*) third order tensor of specified size.
 %   
-%   The resulting identity third order tensor is such that its all elements 
-%   are 0, expect for the elements on the main diagonal of the cube (where 
-%   indexes in all three dimensions are equal, i.e. `[1,1,1]`, etc.).
+% The resulting *identity* third order tensor is such that its all elements 
+% are ``0``, expect for the elements on the main diagonal of the cube
+% (where indexes in all three dimensions are equal, i.e. ``[1,1,1]``,
+% etc.).
 %
-%   Input arguments:
-%
-%   n - Size of the tensor. The resulting tensor will have all its 
+% Args:
+%   n: Size of the tensor. The resulting tensor will have all its
 %       dimensions equal to this value.
 %
-%   Output arguments:
+% Returns:
+%   c: The resulting *eye* (*identity*) tensor.
 %
-%   c - The resulting "eye" ("identity") tensor.
+% See also:
+%   :func:`tensor4Eye`
 %
-%   See also: TENSOR4EYE
 
     if nargin < 1 || isempty(m)
         error('The first argument is mandatory and cannot be empty.');

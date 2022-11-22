@@ -1,17 +1,14 @@
 function tf = tensor4Flatten( tsr )
-%TENSOR4FLATTEN Flattens the input fourth-order tensor `[m, n, o, p]` to matrix `[m * n, o * p]`.
+% Flatten the input fourth-order tensor ``[m, n, o, p]`` to matrix ``[m * n, o * p]``.
 %
-%   The flattening is performed by using MATLAB's 
-%   <a href="matlab:web('https://www.mathworks.com/help/matlab/ref/reshape.html')">reshape</a> 
-%   function.
+% The flattening is performed by using MATLAB's `reshape
+% <https://www.mathworks.com/help/matlab/ref/reshape.html>`_ function.
 %
-% Input arguments:
+% Args:
+%   tsr: Fourth-order tensor to flatten.
 %
-%  tsr - Fourth-order tensor to flatten.
-%
-% Output arguments:
-%
-%  tf - The resulting matrix.
+% Returns:
+%   tf: The resulting matrix.
 %
 
     if nargin < 1 || isempty(tsr)
