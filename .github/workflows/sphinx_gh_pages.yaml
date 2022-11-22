@@ -11,7 +11,6 @@ jobs:
             -   uses: actions/setup-python@v2
             -   name: Install dependencies
                 run: |
-                    pip install -e .
                     pip install sphinx furo sphinxcontrib-matlabdomain
             -   name: Sphinx build
                 run: |
