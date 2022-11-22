@@ -7,9 +7,10 @@ Welcome to MATLAB Tensors's documentation!
 ==========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
 
+   overview
    api
 
 Indices and tables
