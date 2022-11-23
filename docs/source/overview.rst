@@ -141,7 +141,7 @@ Note that partial derivatives from the equation above are simply matrices:
    \frac{\partial {\mu }_{Fi}}{\partial m_j} = D_{i,j}
 
 After replacing that and simplifying the notation by removing some unnecessary
-subscripts, we get the following:
+subscripts, and replacing Greek with Latin letters, we get the following:
 
 .. math::
    T_{[n*n*n]}\to t_{i,j,k}=\frac{r_i}{m^2_i} * D_{i,j} * D_{i,k} *
