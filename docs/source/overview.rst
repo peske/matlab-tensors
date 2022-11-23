@@ -5,7 +5,8 @@ The Problem / Motivation
 ------------------------
 
 Let us start with a real-life problem that was the original motive for this
-package. The task was to create a 3D tensor from three vectors so that:
+package. The task was to create a 3D tensor from several vectors/matrices so
+that:
 
 .. math::
    \frac{{\partial }^2v_G}{{\left(\partial m\right)}^2}\ [n*n*n]\to 
@@ -159,9 +160,9 @@ One possible solution:
    % Pre-calculate v ./ r because it appears twice:
    vr = v ./ r;
    % Finalize:
-   T = - T .* tensorHadamard([n,n,n], vr, 2) + \
+       T = - T .* tensorHadamard([n,n,n], vr, 2) + \
        2 / R^2 * T .* tensorHadamard([n,n,n], x ./ m, 1) - \
-	   T .* tensorHadamard([n,n,n], vr, 3);
+       T .* tensorHadamard([n,n,n], vr, 3);
 
 Another possible solution:
 
@@ -172,6 +173,6 @@ Another possible solution:
    % Start from everything within the parenthesis:
    T = - tensorHadamard([n,n,n], vr, 2) + \
        2 / R^2 * tensorHadamard([n,n,n], x ./ m, 1) - \
-	   tensorHadamard([n,n,n], vr, 3);
+       tensorHadamard([n,n,n], vr, 3);
    % Finalize:
    T = T .* tensorHadamard(3, r ./ m .^ 2, 1, D, [1,2], D, [1,3]);
