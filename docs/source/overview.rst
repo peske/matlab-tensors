@@ -144,7 +144,7 @@ After replacing that and simplifying the notation by removing some unnecessary
 subscripts, we get the following:
 
 .. math::
-   \Large T_{[n*n*n]}\to t_{i,j,k}=\frac{r_i}{m^2_i} * D_{i,j} * D_{i,k} *
+   T_{[n*n*n]}\to t_{i,j,k}=\frac{r_i}{m^2_i} * D_{i,j} * D_{i,k} *
    \left(-\frac{v_j}{r_j} + \frac{2}{R^2}\frac{x_i}{m_i} - \frac{v_k}{r_k}\right)
 
 Where :math:`T_{[n,n,n]}` is the output tensor, :math:`R` is an input scalar,
