@@ -1,0 +1,488 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Overview" href="overview.html" />
+        <link rel="canonical" href="https://peske.github.io/matlab-tensors/api.html" />
+
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>API Reference - MATLAB Tensors 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">MATLAB Tensors 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">MATLAB Tensors 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-tensors">
+<span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-tensors" title="Permalink to this heading">#</a></h1>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.isTensor">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">isTensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tsr</span></em>, <em class="sig-param"><span class="pre">order</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.isTensor" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the input argument is a tensor of the specified order.</p>
+<p>The function actualy returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the input value <code class="docutils literal notranslate"><span class="pre">tsr</span></code> has less
+dimensions than specified by <code class="docutils literal notranslate"><span class="pre">order</span></code>. It means that, for example, if we
+specify <code class="docutils literal notranslate"><span class="pre">order</span> <span class="pre">=</span> <span class="pre">3</span></code>, the function will return <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">tsr</span></code> is a
+scalar, vector, matrix or a three-dimensional tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tsr</strong> – Value to check.</p></li>
+<li><p><strong>order</strong> – The order of the tensor. It has to be a scalar, positive whole
+number that represents number of dimensions. For example, a scalar
+is a zero-order tensor, a vector is a first-order tensor, a matrix
+is a second-order tensor, a three-dimensional array is a
+third-order tensor, etc. If this argument isn’t specified, or if
+it’s empty, it will default to <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>isTsr</strong> – Logical value that indicates if <code class="docutils literal notranslate"><span class="pre">tsr</span></code> is a tensor of the
+specified order.</p></li>
+<li><p><strong>tSize</strong> – Optional. The size of the tensor. This will be a row vector of
+length at least equal to <code class="docutils literal notranslate"><span class="pre">order</span></code>. It means that, for example,
+if <code class="docutils literal notranslate"><span class="pre">tsr</span></code> is a vector of size <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">1]</span></code>, and <code class="docutils literal notranslate"><span class="pre">order</span></code> is <code class="docutils literal notranslate"><span class="pre">4</span></code>,
+the resulting <code class="docutils literal notranslate"><span class="pre">tSize</span></code> will be <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>. But there are
+also two cases when it may happen that <code class="docutils literal notranslate"><span class="pre">tSize</span></code> has length greater
+than <code class="docutils literal notranslate"><span class="pre">order</span></code>:</p>
+<ul>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">tsr</span></code> has more dimensions than specified by <code class="docutils literal notranslate"><span class="pre">order</span></code>, in
+which case <code class="docutils literal notranslate"><span class="pre">isTsr</span></code> will be false;</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">order</span></code> is less than <code class="docutils literal notranslate"><span class="pre">2</span></code>. Minimal length of <code class="docutils literal notranslate"><span class="pre">tSize</span></code> is
+<code class="docutils literal notranslate"><span class="pre">2</span></code>, as in
+<a class="reference external" href="https://www.mathworks.com/help/matlab/ref/size.html">size</a>
+function.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.sumAndCollapse">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">sumAndCollapse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">t</span></em>, <em class="sig-param"><span class="pre">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.sumAndCollapse" title="Permalink to this definition">#</a></dt>
+<dd><p>Sum input tensor along the specified dimensions and collapses it.</p>
+<p>Thiis function is very similar to <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/sum.html">sum</a> in terms that both
+are summing over the specified dimensions, and tensors retruned by both
+of them will contain the same elements. The only difference is in the
+shapre of the retruned tensor. The difference is explained in the example
+below.</p>
+<p class="rubric">Example</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span><span class="w"></span>
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<span class="w">     </span><span class="mi">1</span><span class="w">     </span><span class="mi">4</span><span class="w">     </span><span class="mi">1</span><span class="w">     </span><span class="mi">6</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sumAndCollapse</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="mi">4</span><span class="w">     </span><span class="mi">6</span><span class="w"></span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – Tensor to collapse.</p></li>
+<li><p><strong>dim</strong> – Dimensions over which to sum and collapse.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>r</strong> – The result.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.tensor3Eye">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">tensor3Eye</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.tensor3Eye" title="Permalink to this definition">#</a></dt>
+<dd><p>Create an <em>eye</em> (<em>identity</em>) third order tensor of specified size.</p>
+<p>The resulting <em>identity</em> third order tensor is such that its all elements
+are <code class="docutils literal notranslate"><span class="pre">0</span></code>, expect for the elements on the main diagonal of the cube
+(where indexes in all three dimensions are equal, i.e. <code class="docutils literal notranslate"><span class="pre">[1,1,1]</span></code>,
+etc.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – Size of the tensor. The resulting tensor will have all its
+dimensions equal to this value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>c</strong> – The resulting <em>eye</em> (<em>identity</em>) tensor.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#tensors.tensor4Eye" title="tensors.tensor4Eye"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">tensor4Eye()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.tensor4Eye">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">tensor4Eye</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">m</span></em>, <em class="sig-param"><span class="pre">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.tensor4Eye" title="Permalink to this definition">#</a></dt>
+<dd><p>Create <em>eye</em> (<em>identity</em>) fourth order tensor with dimensions <code class="docutils literal notranslate"><span class="pre">[m,n,m,n]</span></code>.</p>
+<p>The resulting <em>identity</em> tensor is such that its flattened version
+(<a class="reference internal" href="#tensors.tensor4Flatten" title="tensors.tensor4Flatten"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">tensor4Flatten()</span></code></a>) is equal to <code class="docutils literal notranslate"><span class="pre">eye(m</span> <span class="pre">*</span> <span class="pre">n)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> – 1st and 3rd dimension of the resulting tensor. It has to be a
+scalar, positive whole number.</p></li>
+<li><p><strong>n</strong> – Optional. 2nd and 4th dimension of the resulting tensor. If not
+specified or empty, it will default <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>te</strong> – The resulting <em>eye</em> tensor (<em>identity</em> tensor).</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#tensors.tensor3Eye" title="tensors.tensor3Eye"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">tensor3Eye()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.tensor4Flatten">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">tensor4Flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tsr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.tensor4Flatten" title="Permalink to this definition">#</a></dt>
+<dd><p>Flatten the input fourth-order tensor <code class="docutils literal notranslate"><span class="pre">[m,</span> <span class="pre">n,</span> <span class="pre">o,</span> <span class="pre">p]</span></code> to matrix <code class="docutils literal notranslate"><span class="pre">[m</span> <span class="pre">*</span> <span class="pre">n,</span> <span class="pre">o</span> <span class="pre">*</span> <span class="pre">p]</span></code>.</p>
+<p>The flattening is performed by using MATLAB’s <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/reshape.html">reshape</a> function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tsr</strong> – Fourth-order tensor to flatten.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>tf</strong> – The resulting matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.tensorHadamard">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">tensorHadamard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tSize</span></em>, <em class="sig-param"><span class="pre">a</span></em>, <em class="sig-param"><span class="pre">dimA</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.tensorHadamard" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a tensor of specified size from the input values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tSize</strong> – Desired size of the tensor. It is a vector whose elements are
+representing desired lengths per dimension. Every non-zero element
+of this vector represents the length of the corresponding dimesion
+of the resulting tensor. For zero elements the length of the
+corresponding dimension of the resulting tensor will be inferred
+from other arguments, if possible. If it cannot be inferred, an
+error will be thrown. If this argument is a scalar, then it
+represents the desired order (total number of dimensions) of the
+resulting tensor, and the specified lengths per dimension are
+assumed to be <code class="docutils literal notranslate"><span class="pre">0</span></code>. For example, setting this argument to <code class="docutils literal notranslate"><span class="pre">4</span></code>
+has the same meaning as setting it to four-element zero row vector
+<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>.</p></li>
+<li><p><strong>a</strong> – The value which will be used for creating the tensor. It can be a
+scalar, vector, matrix, or a tensor. If it’s a vector, it isn’t
+important if it is a row or column vector - the result will be the
+same.</p></li>
+<li><p><strong>dimA</strong> – <p>Vector that defines mapping of dimensions of <code class="docutils literal notranslate"><span class="pre">a</span></code> to the
+dimensions of the resulting tensor. For example, if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a
+matrix, and <code class="docutils literal notranslate"><span class="pre">dimA</span></code> is <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3]</span></code>, it means that rows of matrix
+<code class="docutils literal notranslate"><span class="pre">a</span></code> will end up along 2nd dimension, and columns of matrix <code class="docutils literal notranslate"><span class="pre">a</span></code>
+along 3rd dimension of the resulting tensor. Number of elements of
+<code class="docutils literal notranslate"><span class="pre">dimA</span></code> must be equal to number of dimensions of value <code class="docutils literal notranslate"><span class="pre">a</span></code>. If
+<code class="docutils literal notranslate"><span class="pre">dimA</span></code> isn’t provided, or is empty, it’s assumed that <code class="docutils literal notranslate"><span class="pre">a</span></code>
+should end up along the first dimensions of the resulting tensor,
+so it’ll get the following values by default:</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">a</span></code> is scalar, an error will be thrown;</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">a</span></code> is a vector, <code class="docutils literal notranslate"><span class="pre">dimA</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>, meaning that
+vector <code class="docutils literal notranslate"><span class="pre">a</span></code> should end up as the first dimension of the
+resulting tensor;</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a matrix, <code class="docutils literal notranslate"><span class="pre">dimA</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>, meaning
+that matrix <code class="docutils literal notranslate"><span class="pre">a</span></code> should end up along the first two dimensions of
+the resulting tensor;</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a three-dimensional tensor, <code class="docutils literal notranslate"><span class="pre">dimA</span></code> defaults to
+<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, etc.</p></li>
+</ul>
+</p></li>
+<li><p><strong>varargin</strong> – The function accepts variable number of arguments so that we
+can provide multiple <code class="docutils literal notranslate"><span class="pre">a</span></code> / <code class="docutils literal notranslate"><span class="pre">dimA</span></code> pairs, every representing an
+input tensor. These tensors are then multiplied element-wise to
+calculate the result.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>t</strong> – The resulting tensor.</p></li>
+<li><p><strong>tSize</strong> – The size of the resulting tensor.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.tensorOrder">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">tensorOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tsr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.tensorOrder" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the order (number of dimensions) of the input tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tsr</strong> – Input tensor whose order we want to determine.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dims</strong> – The order (number of dimensions) of the input tensor. If the
+input value is a scalar, the function will return <code class="docutils literal notranslate"><span class="pre">0</span></code>; if it’s a
+vector, the function will return <code class="docutils literal notranslate"><span class="pre">1</span></code>, etc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="tensors.wholeNumbers">
+<span class="sig-prename descclassname"><span class="pre">tensors.</span></span><span class="sig-name descname"><span class="pre">wholeNumbers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensors.wholeNumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if all of the elements are whole numbers.</p>
+<p>The difference comparing to <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/isinteger.html">isinteger</a> function is
+that the later takes into account the data type, and will return
+<code class="docutils literal notranslate"><span class="pre">false</span></code> if the input is a floating point number, even if it is a whole
+number. In other words, <code class="docutils literal notranslate"><span class="pre">isinteger(5)</span></code> will return <code class="docutils literal notranslate"><span class="pre">false</span></code> (because
+<code class="docutils literal notranslate"><span class="pre">5</span></code> is a floating point number), while <code class="docutils literal notranslate"><span class="pre">wholeNumbers(5)</span></code> will return
+<code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Value to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – Boolean tensor of the same size as <code class="docutils literal notranslate"><span class="pre">x</span></code>, with <code class="docutils literal notranslate"><span class="pre">true</span></code>
+elements at the position of whole-number elements in <code class="docutils literal notranslate"><span class="pre">x</span></code>,
+<code class="docutils literal notranslate"><span class="pre">false</span></code> in other positions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="overview.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Overview</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Aleksandar Pesic
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
